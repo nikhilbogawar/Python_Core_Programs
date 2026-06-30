@@ -7,7 +7,7 @@ def register():
     k["Age"] = int(input("Enter your Age: "))
     k["Email"] = input("Enter your Email: ")
     k["Phno"] = input("Enter your Phone Number: ")
-    k["Pass"] = input("Enter Password: ")
+    k["Password"] = input("Enter Password: ")
     while True:
         username = input("Enter your Username: ")
         if username in profiles.keys():
@@ -18,24 +18,28 @@ def register():
 
 def login():
     username = input("Enter your Username: ")
+    global profiles
     if username in profiles:
         password = input("Enter your Password: ")
-        if password == profiles[username]["Pass"]:
+        if password == profiles[username]["Password"]:
+            profiles[username]["logged"]=True
             print("Login Successful")
-            return username
         else:
             print("Incorrect password, please try again")
-            return None
     else:
         print("Username not found")
-        return None
 
-def logout(current_user):
-    if current_user:
-        print(f"User '{current_user}' has been logged out")
+def logout(username):
+    global profiles
+    if username in profiles and profiles[username]["logged"]:
+        profiles[username]["logged"] = False
+        print("User logged out successfully")
     else:
-        print("No user is currently logged in")
+        print("No active session for this user")
+
 
 register()
 current_user = login()
-logout(current_user)
+if current_user:
+    logout(current_user)
+
