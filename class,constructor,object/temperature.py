@@ -14,5 +14,5 @@ class Temperature:
     def show_conversion(self):
         print("Celsius:", self.celsius, "Fahrenheit:", Temperature.to_fahrenheit(self.celsius))
 
-t = Temperature(25)
-t.show_conversion()
+t1 = Temperature(25)
+t1.show_conversion()
