@@ -23,15 +23,17 @@ class Student:
     @classmethod
     def curve_marks(cls, students, percent):
         for s in students:
-            s.marks += s.marks * (percent / 100)
+            s.marks = s.marks + s.marks * (percent / 100)
 
     @staticmethod
     def grade(marks):
-        if marks >= 75: return "A"
-        elif marks >= 50: return "B"
-        else: return "C"
+        if marks >= 75:
+            return "A"
+        elif marks >= 50:
+            return "B"
+        else:
+            return "C"
 
-# Demo
 s1 = Student("Nikhil", 75)
 s2 = Student("Nicky", 35)
 print(s1.name, s1.is_passed(), Student.grade(s1.marks))
