@@ -20,8 +20,13 @@ class Course:
         return age >= 18
 
 s1 = Course("Nikhil")
+print(s1.student_name)
 s1.enroll()
-s2 = Course("Ravi")
+s2 = Course("Nicky")
+print(s2.student_name)
 s2.enroll()
 
 Course.show_total()
+
+print(Course.is_eligible(21))
+print(Course.is_eligible(17))
