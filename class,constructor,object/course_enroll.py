@@ -13,10 +13,10 @@ class Course:
     total_courses = 0
     min_duration = 1
 
-    def __init__(self, title, duration):
+    def __init__(self, title, duration, enrolled_students):
         self.title = title
         self.duration = duration
-        self.enrolled_students = 0
+        self.enrolled_students = enrolled_students
         Course.total_courses += 1
 
     def enroll(self):
