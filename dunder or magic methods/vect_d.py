@@ -16,4 +16,4 @@ v3=Vector(9,17)
 v4=v1+v2+v3
 print(f"{v4.x,v4.y}")   # (26, 40)
 v5=v4-v1-v2-v3
-print(f"{v5.x,v5.y}")   # (0, 0)
+print(f"{v5.x,v5.y}")   # (0, 0)a
