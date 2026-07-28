@@ -13,6 +13,7 @@ class Student:
 s1=Student(85)
 s2=Student(90)
 print(s1>=s2)  # False
-print(s1<=s1)  # True
+print(s1>s1)  # False
+print(s1<=s2) # True
 print(s1==s2)  # False
 print(s1!=s2)  # True
