@@ -30,8 +30,8 @@ class Course:
     def is_valid_duration(dur):
         return 0 < dur <= 60
 
-c1 = Course("Python", 30)
-c2 = Course("Java", 45)
+c1 = Course("Python", 30, 3)
+c2 = Course("Java", 45, 5)
 c1.enroll()
 c2.enroll()
 print(c1.title, c1.enrolled_students)
