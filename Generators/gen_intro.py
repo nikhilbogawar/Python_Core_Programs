@@ -1,4 +1,6 @@
 # To generate new values is called Generators
+# Generators used for once, and uses yield keyword to send data one at a time
+
 
 # def fun(x):
 #     for i in range(x):
