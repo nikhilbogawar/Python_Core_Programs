@@ -52,6 +52,27 @@ bike=Bike()
 car.wheels()
 bike.wheels()
 
+# without using wheels function inside the car and bike classes:---
+# class Vehicle:
+#     def __init__(self,name,no_of_wheels):
+#         self.name=name
+#         self.no_of_wheels=no_of_wheels
+#     def wheels(self):
+#         return self.no_of_wheels
+# class Car(Vehicle):
+#     def __init__(self,name):
+#         super().__init__(name,4)
+# class Bike(Vehicle):
+#     def __init__(self,name):
+#         super().__init__(name,2)
+# c1=Car('BMW')
+# print(c1.name)
+# print(c1.no_of_wheels)
+# c2=Bike('Splendor')
+# print(c2.name)
+# print(c2.no_of_wheels)
+
+
 # • Create class Employee with an instance method salary(). Create class
 # Manager(Employee) that overrides salary() and adds an incentive. Demonstrate
 # both outputs.
@@ -87,17 +108,22 @@ class MathOps:
 class AdvancedOps(MathOps):
     pass
 print("Sum:", AdvancedOps.add(5, 7))
+# composition:-- has a relationship
+# inheritance:-- is a relationship
 
 # • Create two classes Father and Mother, both defining a method skills(). Create
 # class Child(Father, Mother) and check which skills() runs using MRO.
 class Father:
     def skills(self):
         print("Father: Gardening")
+        super().skills()
 class Mother:
     def skills(self):
         print("Mother: Cooking")
 class Child(Father, Mother):
-    pass
+    def skills(self):
+        print("All Skills")
+        super().skills()
 c = Child()
 c.skills()
 
