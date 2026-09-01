@@ -12,4 +12,7 @@ class Bike(Transport):
     def move(self):
         super().move()
         print("Bike")
-    
+b1=Bus()
+b1.move()
+b2=Bike()
+b2.move()
