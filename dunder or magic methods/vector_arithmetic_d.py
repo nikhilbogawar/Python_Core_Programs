@@ -3,15 +3,15 @@ class Vector:
         self.x=x
         self.y=y
     def __add__(self, other):
-        return (self.x+other.x,self.y+other.y)
+        return self.x + other.x, self.y + other.y
     def __sub__(self, other):
-        return (self.x-other.x,self.y-other.y)
+        return self.x - other.x, self.y - other.y
     def __mul__(self, other):
-        return (self.x*other.x,self.y*other.y)
+        return self.x * other.x, self.y * other.y
     def __truediv__(self, other):
-        return (self.x/other.x,self.y/other.y)
+        return self.x / other.x, self.y / other.y
     def __mod__(self, other):
-        return (self.x%other.x,self.y%other.y)
+        return self.x % other.x, self.y % other.y
 v1=Vector(10,20)
 v2=Vector(7,8)
 print(v1+v2)   # (17,28)
