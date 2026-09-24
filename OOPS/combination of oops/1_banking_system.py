@@ -15,6 +15,7 @@
 
 from abc import ABC, abstractmethod
 class Account(ABC):
+    interest_rate=0.08
     def __init__(self,balance=0):
         self.__balance=balance
     @property
@@ -37,7 +38,7 @@ class Account(ABC):
     def calculate_interest(self):
         pass
     @staticmethod
-    def validate_amount(self,amount):
+    def validate_amount(amount):
         if amount>0:
             return True
         else:
@@ -47,13 +48,13 @@ class Account(ABC):
         cls.interest_rate=rate
 class SavingsAccount(Account):
     def calculate_interest(self):
-        return self.balance*0.04
+        return self.balance*self.interest_rate
 class CurrentAccount(Account):
     def calculate_interest(self):
-        return self.balance*0.02
+        return self.balance*self.interest_rate
 class FixedDepositAccount(Account):
     def calculate_interest(self):
-        return self.balance*0.07
+        return self.balance*self.interest_rate
 a=[SavingsAccount(1000),CurrentAccount(2000),FixedDepositAccount(5000)]
 for i in a:
     print(type(i).__name__,i.calculate_interest())
