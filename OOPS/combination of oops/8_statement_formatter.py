@@ -23,3 +23,24 @@ class TextFormatter(StatementFormatter):
 pipeline = [PDFFormatter(), JSONFormatter(), TextFormatter()]
 for fmt in pipeline:
     print(fmt("Report"))
+
+# class StatementFormatter(ABC):
+#
+#     def __format(self):
+#         print("Formatting statement")
+#     @abstractmethod
+#     def call_formatter(self):
+#         self.__format()
+#
+# class JSONFormatter(StatementFormatter):
+#     def call_formatter(self):
+#         print("Formatting JSON")
+#         super().call_formatter()
+#     def _call_(self, text):
+#         self.call_formatter()
+#         print(f"text formatted to json: {text}")
+#     def _repr_(self):
+#         return "JSONFormatter()"
+# l=[JSONFormatter()]
+# for i in l:
+#     print(i)

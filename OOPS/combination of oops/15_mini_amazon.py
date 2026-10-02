@@ -85,3 +85,79 @@ class BuyerWithRewards(Buyer, RewardsMixin):
 buyer2 = BuyerWithRewards("Ravi", "secure123")
 print("Role:", buyer2.get_role())
 print("MRO:", BuyerWithRewards.mro())
+
+# sir method:--->>>>>>>>
+# from abc import ABC, abstractmethod
+# class User(ABC):
+#     total_users = 0
+#     def _init_(self, name, age):
+#         self.name = name
+#         self.age = age
+#         self.total_users += 1
+#     @abstractmethod
+#     def get_role(self):
+#         pass
+#     @classmethod
+#     def get_total_users(cls):
+#         return cls.total_users
+# class Product:
+#     def _init_(self, name, price):
+#         self.name = name
+#         self.price = price
+#     def _repr_(self):
+#         return f'Product({self.name}, {self.price})'
+#     def _str_(self):
+#         return f'Product({self.name}, {self.price})'
+# class Seller(User):
+#     def _init_(self, name, age):
+#         super()._init_(name, age)
+#     def get_role(self):
+#         return "seller"
+# class Buyer(User):
+#     def _init_(self, name, age, cart):
+#         super()._init_(name, age)
+#         self.cart = cart
+#     def get_role(self):
+#         return "buyer"
+#     def checkout(self):
+#         print(f"{self.cart.get_totalprice()} is the total price")
+# class Order:
+#     def _init_(self, product, quantity):
+#         self.product = product
+#         self.quantity = quantity
+# class Reward:
+#     def get_totalprice(self, tp):
+#         if tp > 1000:
+#             return tp * 0.9
+#         return tp
+# class Cart(Reward):
+#     def _init_(self):
+#         self.__cart = []
+#     def _add_(self, other):
+#         self.__cart.append(other)
+#     def _sub_(self, other):
+#         self.__cart.remove(other)
+#     def get_cart(self):
+#         return self.__cart.copy()
+#     def get_totalprice(self):
+#         tp = 0
+#         for i in self.__cart:
+#             tp += i.price
+#         return super().get_totalprice(tp)
+#     def checkout(self, role, total_price):
+#         if role == "seller":
+#             print(f"Checkout with price {total_price} received")
+#         else:
+#             print(f"Checkout with price {total_price} paid")
+# def checkout(user, cart):
+#     total_price = cart.get_totalprice()
+#     cart.checkout(user.get_role(), total_price)
+# product = Product("laptop", 100)
+# c = Cart()
+# c + product
+# p = Product("AC", 300)
+# c + p
+# print(c.get_cart())
+# print(c.get_totalprice())
+# u2 = Buyer("B", 30, c)
+# u2.checkout()
