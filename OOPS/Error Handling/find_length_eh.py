@@ -5,6 +5,18 @@
 # the function should raise and handle a TypeError,
 # and print an appropriate error message explaining what happens when an integer is sent as input.
 def find_length(obj):
+    # if isinstance(obj,(str,list,tuple,set)):
+    #     c=0
+    #     for _ in obj:
+    #         c+=1
+    #     return c
+    # elif isinstance(obj,dict):
+    #     c=0
+    #     for i,j in obj.items():
+    #         c+=1
+    #     return c
+    # else:
+    #     raise TypeError("object must be iterable")
     try:
         count = 0
         for item in obj:
