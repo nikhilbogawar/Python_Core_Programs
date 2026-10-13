@@ -1,0 +1,9 @@
+Total Records: 7
+Valid Records: 4
+Invalid Records: 3
+Total Revenue: 970.0
+
+Category-wise Revenue:
+food: 220.0
+shopping: 300.0
+electronics: 450.0

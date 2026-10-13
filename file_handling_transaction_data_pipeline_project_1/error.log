@@ -1,0 +1,3 @@
+U2,-50,shoppingU3,200,travel -> Invalid number of fields
+U4,abc,food -> Non-numeric amount
+U7,,travel -> Missing amount
