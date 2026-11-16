@@ -6,6 +6,9 @@
 # await it used inside the async def
 # we should write the async before def
 # inside the tread it contains event loop and inside the event loop it runs some tasks
+# wait is used for tasks
+# wait_for is used for 1coroutines
+
 # import threading
 # import asyncio
 

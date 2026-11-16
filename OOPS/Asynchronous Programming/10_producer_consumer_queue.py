@@ -13,9 +13,9 @@ async def consumer(q):
         q.task_done()
 async def main():
     q=asyncio.Queue()
-    c1=asyncio.create_task(consumer(q))
+    c1=asyncio.create_task(producer(q))
     c2=asyncio.create_task(consumer(q))
-    await producer(q)
+    await c1
     await q.join()
     c1.cancel()
     c2.cancel()
